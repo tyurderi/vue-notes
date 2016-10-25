@@ -1,0 +1,55 @@
+@import "font-awesome.min.css";
+* {
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+}
+.app h1 a {
+  text-decoration: none;
+}
+.app ol.notes li a.note-delete {
+  font-size: 12px;
+  background: #e74c3c;
+  color: #fff;
+  padding: 1px;
+  border-radius: 3px;
+  text-decoration: none;
+}
+.app form {
+  margin: 50px 0 0 0;
+}
+.app form label {
+  display: block;
+  font-size: 24px;
+  font-weight: 100;
+  border-bottom: 2px solid #eee;
+}
+.app form input,
+.app form textarea {
+  padding: 5px;
+  width: 100%;
+  border: none;
+  font-size: 18px;
+  font-weight: 100;
+}
+.app form button {
+  padding: 10px 20px;
+  border: none;
+  background: #2ecc71;
+  font-size: 18px;
+  color: #fff;
+  margin: 10px 0 0 0;
+}
+.app form button[type=button] {
+  background: #ccc;
+  color: #666;
+}
+.app .footer {
+  position: absolute;
+  width: 100%;
+  bottom: 5px;
+  text-align: center;
+  font-size: 14px;
+}
+.app .footer a:hover {
+  color: #3498db;
+}

@@ -1,0 +1,67 @@
+@import "font-awesome.min.css";
+
+* {
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+}
+
+.app {
+  h1 {
+    a {
+      text-decoration: none;
+    }
+  }
+  ol.notes {
+    li {
+      a.note-title {
+
+      }
+      a.note-delete {
+        font-size: 12px;
+        background: #e74c3c;
+        color: #fff;
+        padding: 1px;
+        border-radius: 3px;
+        text-decoration: none;
+      }
+    }
+  }
+  form {
+    margin: 50px 0 0 0;
+    label {
+      display: block;
+      font-size: 24px;
+      font-weight: 100;
+      border-bottom: 2px solid #eee;
+    }
+    input, textarea {
+      padding: 5px;
+      width: 100%;
+      border: none;
+      font-size: 18px;
+      font-weight: 100;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      background: #2ecc71;
+      font-size: 18px;
+      color: #fff;
+      margin: 10px 0 0 0;
+      &[type=button] {
+        background: #ccc;
+        color: #666;
+      }
+    }
+  }
+  .footer {
+    position: absolute;
+    width: 100%;
+    bottom: 5px;
+    text-align: center;
+    font-size: 14px;
+    a:hover {
+      color: #3498db;
+    }
+  }
+}

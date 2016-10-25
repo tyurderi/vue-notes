@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block title %}{% endblock %} | Notes</title>
+
+    {% block css %}
+        <link rel="stylesheet" href="{{ resource_url('css/all.css') }}" />
+    {% endblock %}
+
+    {% block javascript %}
+        <script type="text/javascript" src="{{ resource_url('js/jquery.min.js') }}"></script>
+        <script type="text/javascript" src="{{ resource_url('js/vue.min.js') }}"></script>
+        <script type="text/javascript" src="{{ resource_url('js/all.js') }}"></script>
+    {% endblock %}
+</head>
+<body class="ctl-{{ controllerName|lower }} act-{{ actionName|lower }}" data-url="{{ url() }}">
+{% block body %}
+
+{% endblock %}
+</body>
+</html>

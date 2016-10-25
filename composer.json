@@ -1,0 +1,10 @@
+{
+    "require": {
+        "favez/favez": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Notes\\": "src/"
+        }
+    }
+}

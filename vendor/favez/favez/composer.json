@@ -1,0 +1,22 @@
+{
+    "name": "favez/favez",
+    "description": "Favez PHP Framework",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "tyurderi",
+            "email": "tyurderi@yahoo.de"
+        }
+    ],
+    "require": {
+        "twig/twig": "^1.24",
+        "slim/slim": "^3.5",
+        "tedivm/stash": "^0.14.1",
+        "favez/orm": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Favez\\Mvc\\": "src/"
+        }
+    }
+}

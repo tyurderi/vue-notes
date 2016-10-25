@@ -1,0 +1,39 @@
+{% extends 'index/_base.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+<div class="app">
+    <h1>
+        Notes
+        <a href="#" class="add-note" v-on:click.prevent="openEditor(null)" v-show="!editing">
+            +
+        </a>
+    </h1>
+    <ol class="notes" v-show="!editing">
+        <li v-for="note in notes">
+            <a href="#" class="note-title" v-on:click.prevent="openEditor(note)">{{ '{{ note.title }}' }}</a>
+            <a href="#" class="note-delete" v-on:click.prevent="deleteNote(note)">Delete</a>
+        </li>
+    </ol>
+    <span class="no-notes" v-show="!notes.length">
+        You have currently no notes.
+    </span>
+    <div class="editor" v-show="editing">
+        <form method="post" action="{{ url('note/save') }}" v-on:submit.prevent="saveNote()">
+            <div class="form-item">
+                <label for="title">Title</label>
+                <input type="text" id="title" v-model="editingNote.title" />
+            </div>
+            <div class="form-item">
+                <label for="text">Text</label>
+                <textarea id="title" v-model="editingNote.text" rows="10"></textarea>
+            </div>
+            <label></label>
+            <button type="submit">Save</button>
+            <button type="button" v-on:click="closeEditor()">Abort</button>
+        </form>
+    </div>
+    <div class="footer">Powered by <a href="https://vuejs.org/" target="_blank">Vue.js</a></div>
+</div>
+{% endblock %}
