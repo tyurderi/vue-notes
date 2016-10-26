@@ -1,0 +1,9 @@
+{
+  "base": "http://notes.tommy.io/themes/frontend/default/_resources/js",
+  "entry": [
+    "jquery.min",
+    "vue.min",
+    "all"
+  ],
+  "alias": []
+}

@@ -19,6 +19,10 @@
             {
                 this.loadNotes();
             },
+            mounted: function()
+            {
+                $('.app').fadeIn();
+            },
             methods:
             {
                 openEditor: function(note)
