@@ -7,7 +7,7 @@
             return BASE_URL + (path || '');
         };
 
-        var app = new Vue({
+        new Vue({
             el: '.app',
             data:
             {
@@ -23,6 +23,8 @@
             {
                 openEditor: function(note)
                 {
+                    var me = this;
+
                     if (note == null)
                     {
                         note = {
@@ -32,38 +34,46 @@
                         };
                     }
 
-                    this.editing     = true;
-                    this.editingNote = note;
+                    me.editing     = true;
+                    me.editingNote = note;
                 },
                 closeEditor: function()
                 {
-                    app.editing     = false;
-                    app.editingNote = {};
+                    var me = this;
+
+                    me.editing     = false;
+                    me.editingNote = {};
                 },
                 saveNote: function()
                 {
-                    $.post(url('note/save'), { note: this.editingNote }, function(response) {
-                        app.closeEditor();
-                        app.loadNotes();
+                    var me = this;
+
+                    $.post(url('note/save'), { note: me.editingNote }, function(response) {
+                        me.closeEditor();
+                        me.loadNotes();
                     })
                 },
                 loadNotes: function()
                 {
+                    var me = this;
+
                     $.post(url('note/list'), function(response) {
-                        app.notes = response.data;
+                        me.notes = response.data;
                     });
                 },
                 deleteNote: function(note)
                 {
+                    var me = this;
+
                     if (confirm('Are you sure?'))
                     {
-                        if (app.editingNote.id == note.id)
+                        if (me.editingNote.id == note.id)
                         {
-                            app.closeEditor();
+                            me.closeEditor();
                         }
 
                         $.post(url('note/delete'), { noteID: note.id }, function(response) {
-                            app.notes.splice(app.notes.indexOf(note), 1);
+                            me.notes.splice(me.notes.indexOf(note), 1);
                         });
                     }
                 }
